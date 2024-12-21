@@ -5,6 +5,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.9.0]",
+    "UiPath.DataService.Activities": "[24.11.1]",
     "UiPath.Excel.Activities": "[2.23.4]",
     "UiPath.Mail.Activities": "[1.23.1]",
     "UiPath.MicrosoftOffice365.Activities": "[2.8.22]",
@@ -13,7 +14,14 @@
     "UiPath.UIAutomation.Activities": "[24.10.0]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "BP_DEV",
+      "namespace": "UiPath_RPA_KenStevenConstante",
+      "uniqueReference": "jwnhNX3snLadzAOZy8UxPaWe8sIX9l6XV6ia4dWvbpg="
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.1.0",
   "projectVersion": "1.0.0",
