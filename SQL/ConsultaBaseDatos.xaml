@@ -206,7 +206,7 @@
         </OutArgument>
       </ui:DatabaseConnect.DatabaseConnection>
     </ui:DatabaseConnect>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Query ejecucion consulta" sap:VirtualizedContainerService.HintSize="354,146" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="select * from  CLIENTES_CITACIONES where IDENTIFICACION != 'NO DISPONIBLE' AND  IDENTIFICACION != 'NO VISIBLE'">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Query ejecucion consulta" sap:VirtualizedContainerService.HintSize="354,146" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="SELECT TOP 10 *,CASE WHEN LEN(IDENTIFICACION) = 9 THEN RIGHT(CONCAT('0000000000',IDENTIFICACION),10) WHEN LEN(IDENTIFICACION) = 12 THEN RIGHT(CONCAT('0000000000000',IDENTIFICACION),13) ELSE IDENTIFICACION END AS [IDENTIFICACION_CURADA] FROM CLIENTES_CITACIONES WHERE IDENTIFICACION NOT IN ('NO DISPONIBLE', 'NO VISIBLE')">
       <ui:ExecuteQuery.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">out_dt_Datos</CSharpReference>
