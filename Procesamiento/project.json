@@ -1,0 +1,70 @@
+{
+  "name": "Procesamiento",
+  "projectId": "a9848b15-bf19-417a-9cf3-9e136174457f",
+  "description": "Procesamiento consulta multas ant",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.DataService.Activities": "[24.11.1]",
+    "UiPath.Excel.Activities": "[2.23.4]",
+    "UiPath.Mail.Activities": "[1.23.1]",
+    "UiPath.System.Activities": "[24.10.3]",
+    "UiPath.Testing.Activities": "[24.10.3]",
+    "UiPath.UIAutomation.Activities": "[24.10.0]"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "BP_DEV",
+      "namespace": "Procesamiento",
+      "uniqueReference": "Gex/Df+WE5GrIVbd0sBG2xghZS2uufw3OCdX6K1fkFM="
+    }
+  ],
+  "schemaVersion": "4.0",
+  "studioVersion": "24.10.1.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "CSharp",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "71ed64c5-d677-42fb-8e06-792e2f649f44",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}
