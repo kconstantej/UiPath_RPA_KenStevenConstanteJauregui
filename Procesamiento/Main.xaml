@@ -135,7 +135,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="205,98" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="625,1383" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
         <TryCatch DisplayName="Try Catch procesar trsx" sap:VirtualizedContainerService.HintSize="579,968" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
@@ -148,7 +148,7 @@
               <ui:LogMessage DisplayName="Log Message proceso transaccion" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
                 <ui:LogMessage.Message>
                   <InArgument x:TypeArguments="x:Object">
-                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Inicio procesamiento de trsx: " + ActualTransaction.Reference + "..."</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">"Inicio procesamiento de trsx: " + ActualTransaction.Reference + "; Id de la operción: "+ActualTransaction.SpecificContent["IDENTIFICACION"].ToString()+"; Correo de cliente: "+ActualTransaction.SpecificContent["CORREO"].ToString()</CSharpValue>
                   </InArgument>
                 </ui:LogMessage.Message>
               </ui:LogMessage>
