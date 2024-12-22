@@ -4,7 +4,7 @@
     <x:Property Name="out_dt_DatosLimpios" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>593,880</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>679,880</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -137,9 +137,12 @@
         </OutArgument>
       </ui:FilterDataTable.OutputDataTable>
       <ui:FilterDataTable.SelectColumns>
-        <scg:List x:TypeArguments="InArgument" Capacity="8">
+        <scg:List x:TypeArguments="InArgument" Capacity="16">
           <InArgument x:TypeArguments="x:String">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"IDENTIFICACION"</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">"APELLIDOS"</CSharpValue>
           </InArgument>
           <InArgument x:TypeArguments="x:String">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">"NOMBRES"</CSharpValue>

@@ -89,16 +89,6 @@
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="512,1103" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="CodigoSubproducto" />
-      <Variable x:TypeArguments="x:String" Name="NombreSubproducto" />
-      <Variable x:TypeArguments="x:String" Name="IdOperacion" />
-      <Variable x:TypeArguments="x:String" Name="Identificacion" />
-      <Variable x:TypeArguments="x:String" Name="NombreCliente" />
-      <Variable x:TypeArguments="x:String" Name="ValorNominal" />
-      <Variable x:TypeArguments="x:String" Name="NombreArchivo" />
-      <Variable x:TypeArguments="x:String" Name="ApiTipoIdCliente" />
-    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

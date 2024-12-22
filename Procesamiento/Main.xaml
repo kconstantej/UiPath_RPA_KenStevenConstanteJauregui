@@ -529,7 +529,7 @@
       </State.Transitions>
     </State>
     <x:Reference>__ReferenceID2</x:Reference>
-    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="218,119" sap2010:WorkflowViewState.IdRef="State_5">
+    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="625,2433" sap2010:WorkflowViewState.IdRef="State_5">
       <State.Entry>
         <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,2014" sap2010:WorkflowViewState.IdRef="TryCatch_5">
           <TryCatch.Try>
@@ -636,7 +636,7 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <ui:FolderExistsX DisplayName="Folder Exists" sap:VirtualizedContainerService.HintSize="479,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_1">
+              <ui:FolderExistsX DisplayName="Folder Exists carpeta descarga" sap:VirtualizedContainerService.HintSize="479,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_1">
                 <ui:FolderExistsX.Exists>
                   <OutArgument x:TypeArguments="x:Boolean">
                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_68">ExisteCarpeta</CSharpReference>
@@ -661,7 +661,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Recursive="True">
+                    <ui:DeleteFolderX DisplayName="Delete Folder eliminar carpeta descarga" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Recursive="True">
                       <ui:DeleteFolderX.Path>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_156">PathCarpetaDescarga</CSharpValue>
@@ -805,7 +805,6 @@
       <Variable x:TypeArguments="ui:BusinessRuleException" Name="BusinessError" />
       <Variable x:TypeArguments="ui:QueueItem" Name="ActualTransaction" />
       <Variable x:TypeArguments="s:Exception" Name="SystemError" />
-      <Variable x:TypeArguments="x:String" Name="QueryEntity" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="DicVar" />
       <Variable x:TypeArguments="x:String" Name="UrlAnt" />
       <Variable x:TypeArguments="x:String" Name="fecha" />

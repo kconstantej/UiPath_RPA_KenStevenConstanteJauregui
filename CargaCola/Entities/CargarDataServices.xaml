@@ -3,7 +3,7 @@
     <x:Property Name="in_dt_Datos" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>723,2471</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>723,2502</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,7 +110,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CargarDataServices" sap:VirtualizedContainerService.HintSize="733,2406" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CargarDataServices" sap:VirtualizedContainerService.HintSize="733,2437" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="ContRecord" />
       <Variable x:TypeArguments="scg:List(u:ConsultaMultasAntKC)" Name="DataRecord" />
@@ -156,21 +156,21 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table recorrer tabla" sap:VirtualizedContainerService.HintSize="671,1630" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table recorrer tabla" sap:VirtualizedContainerService.HintSize="671,1661" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="637,1434" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="637,1465" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign details" sap:VirtualizedContainerService.HintSize="575,365" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign DisplayName="Multiple Assign details" sap:VirtualizedContainerService.HintSize="575,396" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
               <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="u:ConsultaMultasAntKC">
@@ -264,6 +264,18 @@
                     <ui:AssignOperation.Value>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">(CurrentRow["FechaEjecucion"].ToString()).Trim()</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">DataDetails.APELLIDOS</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">(CurrentRow["APELLIDOS"].ToString()).Trim()</CSharpValue>
                       </InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
