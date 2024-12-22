@@ -34,6 +34,7 @@
       <x:String>UiPath.DataService.Activities.Models</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.IO</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,6 +103,10 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Procesamiento consultamultas ANT&#xA;Proceso de ConsultasMultasAnt&#xA;Author: KEN CONSTANTE" DisplayName="State Machine main" sap:VirtualizedContainerService.HintSize="709,694" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -192,6 +197,9 @@
                   </InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_fecha">
                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">fecha</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_PathCarpetaDescarga">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_157">PathCarpetaDescarga</CSharpValue>
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
@@ -523,9 +531,12 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="218,119" sap2010:WorkflowViewState.IdRef="State_5">
       <State.Entry>
-        <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,1206" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+        <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,2014" sap2010:WorkflowViewState.IdRef="TryCatch_5">
           <TryCatch.Try>
-            <Sequence DisplayName="Iniciar" sap:VirtualizedContainerService.HintSize="541,956" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Iniciar" sap:VirtualizedContainerService.HintSize="541,1764" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="ExisteCarpeta" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -565,7 +576,7 @@
                   </OutArgument>
                 </ui:GetRobotAsset.Value>
               </ui:GetRobotAsset>
-              <ui:MultipleAssign DisplayName="Multiple Assign diccionario" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign DisplayName="Multiple Assign diccionario" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -595,6 +606,80 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
+              <ui:MultipleAssign DisplayName="Multiple Assign variables descargas" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">PathTemp</CSharpReference>
+                        </OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_152">Directory.GetCurrentDirectory().ToString() + "\\Temp"</CSharpValue>
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_69">PathCarpetaDescarga</CSharpReference>
+                        </OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_153">PathTemp+"\\DESCARGA"</CSharpValue>
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:FolderExistsX DisplayName="Folder Exists" sap:VirtualizedContainerService.HintSize="479,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_1">
+                <ui:FolderExistsX.Exists>
+                  <OutArgument x:TypeArguments="x:Boolean">
+                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_68">ExisteCarpeta</CSharpReference>
+                  </OutArgument>
+                </ui:FolderExistsX.Exists>
+                <ui:FolderExistsX.Path>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_154">PathCarpetaDescarga</CSharpValue>
+                  </InArgument>
+                </ui:FolderExistsX.Path>
+              </ui:FolderExistsX>
+              <If DisplayName="If existe carpeta temporal" sap:VirtualizedContainerService.HintSize="479,455" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_155">ExisteCarpeta</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,191" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Recursive="True">
+                      <ui:DeleteFolderX.Path>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_156">PathCarpetaDescarga</CSharpValue>
+                        </InArgument>
+                      </ui:DeleteFolderX.Path>
+                    </ui:DeleteFolderX>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
@@ -616,7 +701,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Error del sistema Inicializar 2" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign DisplayName="Error del sistema Inicializar 2" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:Exception">
                         <CSharpReference x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">SystemError</CSharpReference>
@@ -654,7 +739,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                 </ActivityAction.Argument>
-                <Assign DisplayName="Assign BusinessError inicializar" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign DisplayName="Assign BusinessError inicializar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="ui:BusinessRuleException">
                       <CSharpReference x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">BusinessError</CSharpReference>
@@ -724,6 +809,8 @@
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="DicVar" />
       <Variable x:TypeArguments="x:String" Name="UrlAnt" />
       <Variable x:TypeArguments="x:String" Name="fecha" />
+      <Variable x:TypeArguments="x:String" Name="PathTemp" />
+      <Variable x:TypeArguments="x:String" Name="PathCarpetaDescarga" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

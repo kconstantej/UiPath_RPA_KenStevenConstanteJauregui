@@ -3,6 +3,7 @@
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="in_DicVar" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_fecha" Type="InArgument(x:String)" />
+    <x:Property Name="in_PathCarpetaDescarga" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>679,1168</sap:VirtualizedContainerService.HintSize>
@@ -150,6 +151,9 @@
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_fecha">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">in_fecha</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PathCarpetaDescarga">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">in_PathCarpetaDescarga</CSharpValue>
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

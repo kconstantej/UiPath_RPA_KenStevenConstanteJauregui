@@ -222,12 +222,12 @@
       </ui:ExecuteQuery.Parameters>
       <ui:ExecuteQuery.Sql>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18" xml:space="preserve">@"SELECT TOP 50  *,
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19" xml:space="preserve">@"SELECT TOP 50 *,
        CASE 
-           WHEN LEN(IDENTIFICACION) = 9 THEN 
-               REPLACE(REPLACE(REPLACE(RIGHT(CONCAT('0000000000', IDENTIFICACION), 10), '-', ''), '.', ''), ' ', '')
-           WHEN LEN(IDENTIFICACION) = 12 THEN 
-               REPLACE(REPLACE(REPLACE(RIGHT(CONCAT('0000000000000', IDENTIFICACION), 13), '-', ''), '.', ''), ' ', '')
+           WHEN LEN(REPLACE(REPLACE(REPLACE(IDENTIFICACION, '-', ''), '.', ''), ' ', '')) = 9 THEN 
+               RIGHT(CONCAT('0000000000', REPLACE(REPLACE(REPLACE(IDENTIFICACION, '-', ''), '.', ''), ' ', '')), 10)
+           WHEN LEN(REPLACE(REPLACE(REPLACE(IDENTIFICACION, '-', ''), '.', ''), ' ', '')) = 12 THEN 
+               RIGHT(CONCAT('0000000000000', REPLACE(REPLACE(REPLACE(IDENTIFICACION, '-', ''), '.', ''), ' ', '')), 13)
            ELSE 
                REPLACE(REPLACE(REPLACE(IDENTIFICACION, '-', ''), '.', ''), ' ', '')
        END AS [IDENTIFICACION_CURADA]
