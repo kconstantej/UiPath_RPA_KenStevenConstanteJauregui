@@ -135,7 +135,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="205,98" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="625,1383" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
         <TryCatch DisplayName="Try Catch procesar trsx" sap:VirtualizedContainerService.HintSize="579,968" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
@@ -190,12 +190,15 @@
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_DicVar">
                     <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_148">DicVar</CSharpValue>
                   </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_fecha">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">fecha</CSharpValue>
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="545,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -234,7 +237,7 @@
                 </Sequence>
               </ActivityAction>
             </Catch>
-            <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+            <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="545,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -245,7 +248,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                 </ActivityAction.Argument>
-                <Assign DisplayName="BusinessError" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign DisplayName="BusinessError" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_6">
                   <Assign.To>
                     <OutArgument x:TypeArguments="ui:BusinessRuleException">
                       <CSharpReference x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">BusinessError</CSharpReference>
@@ -518,11 +521,11 @@
       </State.Transitions>
     </State>
     <x:Reference>__ReferenceID2</x:Reference>
-    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="625,1594" sap2010:WorkflowViewState.IdRef="State_5">
+    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="218,119" sap2010:WorkflowViewState.IdRef="State_5">
       <State.Entry>
-        <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,1175" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+        <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,1206" sap2010:WorkflowViewState.IdRef="TryCatch_5">
           <TryCatch.Try>
-            <Sequence DisplayName="Iniciar" sap:VirtualizedContainerService.HintSize="541,925" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Iniciar" sap:VirtualizedContainerService.HintSize="541,956" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -562,7 +565,7 @@
                   </OutArgument>
                 </ui:GetRobotAsset.Value>
               </ui:GetRobotAsset>
-              <ui:MultipleAssign DisplayName="Multiple Assign diccionario" sap:VirtualizedContainerService.HintSize="479,139" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign DisplayName="Multiple Assign diccionario" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -574,6 +577,18 @@
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">
                           <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_147">new Dictionary&lt;string, object&gt;() { {"UrlAnt",UrlAnt},{"QueueFolderPath",QueueFolderPath},{"QueueName",QueueName}}</CSharpValue>
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_65">fecha</CSharpReference>
+                        </OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">DateTime.Now.ToString("ddMMyyyy")</CSharpValue>
                         </InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
@@ -601,7 +616,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Error del sistema Inicializar 2" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign DisplayName="Error del sistema Inicializar 2" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:Exception">
                         <CSharpReference x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">SystemError</CSharpReference>
@@ -708,6 +723,7 @@
       <Variable x:TypeArguments="x:String" Name="QueryEntity" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="DicVar" />
       <Variable x:TypeArguments="x:String" Name="UrlAnt" />
+      <Variable x:TypeArguments="x:String" Name="fecha" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

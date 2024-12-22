@@ -3,7 +3,7 @@
     <x:Property Name="out_dt_Datos" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>679,1507</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>593,1507</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -206,7 +206,7 @@
         </OutArgument>
       </ui:DatabaseConnect.DatabaseConnection>
     </ui:DatabaseConnect>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Query ejecucion consulta" sap:VirtualizedContainerService.HintSize="354,146" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="SELECT TOP 10 *,CASE WHEN LEN(IDENTIFICACION) = 9 THEN RIGHT(CONCAT('0000000000',IDENTIFICACION),10) WHEN LEN(IDENTIFICACION) = 12 THEN RIGHT(CONCAT('0000000000000',IDENTIFICACION),13) ELSE IDENTIFICACION END AS [IDENTIFICACION_CURADA] FROM CLIENTES_CITACIONES WHERE IDENTIFICACION NOT IN ('NO DISPONIBLE', 'NO VISIBLE')">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Query ejecucion consulta" sap:VirtualizedContainerService.HintSize="354,146" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1">
       <ui:ExecuteQuery.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">out_dt_Datos</CSharpReference>
@@ -220,6 +220,21 @@
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
+      <ui:ExecuteQuery.Sql>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18" xml:space="preserve">@"SELECT TOP 50  *,
+       CASE 
+           WHEN LEN(IDENTIFICACION) = 9 THEN 
+               REPLACE(REPLACE(REPLACE(RIGHT(CONCAT('0000000000', IDENTIFICACION), 10), '-', ''), '.', ''), ' ', '')
+           WHEN LEN(IDENTIFICACION) = 12 THEN 
+               REPLACE(REPLACE(REPLACE(RIGHT(CONCAT('0000000000000', IDENTIFICACION), 13), '-', ''), '.', ''), ' ', '')
+           ELSE 
+               REPLACE(REPLACE(REPLACE(IDENTIFICACION, '-', ''), '.', ''), ' ', '')
+       END AS [IDENTIFICACION_CURADA]
+FROM CLIENTES_CITACIONES 
+WHERE IDENTIFICACION NOT IN ('NO DISPONIBLE', 'NO VISIBLE')"</CSharpValue>
+        </InArgument>
+      </ui:ExecuteQuery.Sql>
     </ui:ExecuteQuery>
     <ui:DatabaseDisconnect DisplayName="Disconnect from Database cliente" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1">
       <ui:DatabaseDisconnect.DatabaseConnection>
