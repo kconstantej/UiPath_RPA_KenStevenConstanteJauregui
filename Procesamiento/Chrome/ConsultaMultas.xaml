@@ -4,9 +4,12 @@
     <x:Property Name="in_DicVar" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_fecha" Type="InArgument(x:String)" />
     <x:Property Name="in_PathCarpetaDescarga" Type="InArgument(x:String)" />
+    <x:Property Name="out_PathCarpetaCliente" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ExisteCitaciones" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_Citaciones" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1194,4053</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1319,4444</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,10 +118,9 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ConsultaMultas" sap:VirtualizedContainerService.HintSize="1204,3988" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ConsultaMultas" sap:VirtualizedContainerService.HintSize="1329,4379" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TipoBusqueda" />
-      <Variable x:TypeArguments="x:String" Name="PathCarpetaCliente" />
       <Variable x:TypeArguments="x:Boolean" Name="ExisteCarpeta" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -126,16 +128,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message ConsultaMultas" sap:VirtualizedContainerService.HintSize="1142,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message ConsultaMultas" sap:VirtualizedContainerService.HintSize="1267,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"---&gt;Inicia ConsultaMultas..."</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:MultipleAssign DisplayName="Multiple Assign variables" sap:VirtualizedContainerService.HintSize="1142,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign variables" sap:VirtualizedContainerService.HintSize="1267,273" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">
@@ -163,7 +165,7 @@
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">
-                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">PathCarpetaCliente</CSharpReference>
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">out_PathCarpetaCliente</CSharpReference>
               </OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
@@ -172,10 +174,32 @@
               </InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">out_ExisteCitaciones</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">out_Citaciones</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:FolderExistsX DisplayName="Folder Exists carpeta cliente" sap:VirtualizedContainerService.HintSize="1142,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_1">
+    <ui:FolderExistsX DisplayName="Folder Exists carpeta cliente" sap:VirtualizedContainerService.HintSize="1267,167" sap2010:WorkflowViewState.IdRef="FolderExistsX_1">
       <ui:FolderExistsX.Exists>
         <OutArgument x:TypeArguments="x:Boolean">
           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">ExisteCarpeta</CSharpReference>
@@ -183,7 +207,7 @@
       </ui:FolderExistsX.Exists>
       <ui:FolderExistsX.Path>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">PathCarpetaCliente</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">out_PathCarpetaCliente</CSharpValue>
         </InArgument>
       </ui:FolderExistsX.Path>
       <sap:WorkflowViewStateService.ViewState>
@@ -193,7 +217,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FolderExistsX>
-    <If DisplayName="If existe carpeta cliente" sap:VirtualizedContainerService.HintSize="1142,464" sap2010:WorkflowViewState.IdRef="If_1">
+    <If DisplayName="If existe carpeta cliente" sap:VirtualizedContainerService.HintSize="1267,467" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">ExisteCarpeta</CSharpValue>
@@ -206,23 +230,23 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,191" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,192" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:DeleteFolderX DisplayName="Delete Folder eliminar carpeta" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Recursive="True">
+          <ui:DeleteFolderX DisplayName="Delete Folder eliminar carpeta" sap:VirtualizedContainerService.HintSize="354,104" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Recursive="True">
             <ui:DeleteFolderX.Path>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">PathCarpetaCliente</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">out_PathCarpetaCliente</CSharpValue>
               </InArgument>
             </ui:DeleteFolderX.Path>
           </ui:DeleteFolderX>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -231,10 +255,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder crera nueva carpeta cliente" sap:VirtualizedContainerService.HintSize="1142,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_1">
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder crera nueva carpeta cliente" sap:VirtualizedContainerService.HintSize="1267,113" sap2010:WorkflowViewState.IdRef="CreateDirectory_1">
       <ui:CreateDirectory.Path>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">PathCarpetaCliente</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">out_PathCarpetaCliente</CSharpValue>
         </InArgument>
       </ui:CreateDirectory.Path>
       <sap:WorkflowViewStateService.ViewState>
@@ -244,27 +268,27 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CreateDirectory>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Servicios en Línea" sap:VirtualizedContainerService.HintSize="1142,2612" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Servicios en Línea" sap:VirtualizedContainerService.HintSize="1267,2930" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do inicio" sap:VirtualizedContainerService.HintSize="1108,2363" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do inicio" sap:VirtualizedContainerService.HintSize="1233,2680" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="1046,940" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Timeout="30" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="1171,946" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Timeout="30" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="450,691" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Target appears 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="450,695" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NSelectItem DisplayName="Select Item 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="388,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
+                  <uix:NSelectItem DisplayName="Select Item 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="388,190" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
                     <uix:NSelectItem.Item>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">TipoBusqueda</CSharpValue>
@@ -289,7 +313,7 @@
                       </uix:TargetAnchorable>
                     </uix:NSelectItem.Target>
                   </uix:NSelectItem>
-                  <uix:NSetText DisplayName="Set Text 'Valor'" sap:VirtualizedContainerService.HintSize="388,194" sap2010:WorkflowViewState.IdRef="NSetText_1" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
+                  <uix:NSetText DisplayName="Set Text 'Valor'" sap:VirtualizedContainerService.HintSize="388,195" sap2010:WorkflowViewState.IdRef="NSetText_1" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
                     <uix:NSetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://servicios.axiscloud.ec/AutoServicio/inicio.jsp?ps_empresa=03&amp;ps_accion=P55" CVScreenId="06f48801-f3e6-4274-98f3-8dc9052db0d7" CvElementArea="374, 271, 336, 41" CvType="InputBox" DesignTimeRectangle="376, 273, 332, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='iframe_descripcion' tag='IFRAME' /&gt;&lt;webctrl id='valor_busqueda' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframe_descripcion' tag='IFRAME' /&gt;&lt;webctrl id='valor_busqueda' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="8b14f023-8df7-4558-a425-72558baeb421" InformativeScreenshot="8ff6d70cc1a7ca4fab96fdaf399a8b1f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Servicios en Línea' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -305,7 +329,7 @@
                       </InArgument>
                     </uix:NSetText.Text>
                   </uix:NSetText>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Buscar'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Buscar'" sap:VirtualizedContainerService.HintSize="388,220" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://servicios.axiscloud.ec/AutoServicio/inicio.jsp?ps_empresa=03&amp;ps_accion=P55" CVScreenId="d9a1753b-0096-4701-9023-453bcdf56c28" CvElementArea="730, 272, 76, 41" CvTextArea="744, 286, 48, 14" CvTextArgument="Buscar" CvType="Button" DesignTimeRectangle="732, 274, 72, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='iframe_descripcion' tag='IFRAME' /&gt;&lt;webctrl id='boton_buscar' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframe_descripcion' tag='IFRAME' /&gt;&lt;webctrl id='boton_buscar' tag='BUTTON' type='' class='btn btn-primary mr-2' aaname='Buscar                                     ' check:innerText='Buscar' /&gt;" Guid="0be9e6b5-955c-401f-b915-ba9d968c49a3" InformativeScreenshot="133cb7e1e4e6cece14de4b87eeaf9ff3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Servicios en Línea' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -329,20 +353,20 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="450,317" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Target does not appear 'Tipo de Búsqueda'" sap:VirtualizedContainerService.HintSize="450,319" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:DeleteFolderX DisplayName="Delete Folder eliminar carpeta sin citaciones" sap:VirtualizedContainerService.HintSize="388,112" sap2010:WorkflowViewState.IdRef="DeleteFolderX_2" Recursive="True">
+                  <ui:DeleteFolderX DisplayName="Delete Folder eliminar carpeta sin citaciones" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="DeleteFolderX_2" Recursive="True">
                     <ui:DeleteFolderX.Path>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">PathCarpetaCliente</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">out_PathCarpetaCliente</CSharpValue>
                       </InArgument>
                     </ui:DeleteFolderX.Path>
                   </ui:DeleteFolderX>
-                  <Throw DisplayName="Throw no carga la pagina" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_1">
+                  <Throw DisplayName="Throw no carga la pagina" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="Throw_1">
                     <InArgument x:TypeArguments="s:Exception">
                       <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">new SystemException("Error al cargar la pagina")</CSharpValue>
                     </InArgument>
@@ -359,21 +383,37 @@
                 </uix:TargetAnchorable>
               </uix:NCheckState.Target>
             </uix:NCheckState>
-            <uix:NCheckState DisplayName="Check App State 'No. Infracción'" sap:VirtualizedContainerService.HintSize="1046,1333" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'No. Infracción'" sap:VirtualizedContainerService.HintSize="1171,1644" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears 'No. Infracción'" sap:VirtualizedContainerService.HintSize="542,1091" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Target appears 'No. Infracción'" sap:VirtualizedContainerService.HintSize="667,1400" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NForEachUiElement DisplayName="For Each UI Element recorre citaciones" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="480,1001" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
+                  <ui:MultipleAssign DisplayName="Multiple Assign existen citaciones" sap:VirtualizedContainerService.HintSize="605,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">out_ExisteCitaciones</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <uix:NForEachUiElement DisplayName="For Each UI Element recorre citaciones" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="605,1161" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="71533e4a-861e-43a4-9f1e-4fd60f51b72a" Version="V3">
                     <uix:NForEachUiElement.Body>
                       <ActivityAction x:TypeArguments="x:Int32">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do recorrer citaciones" sap:VirtualizedContainerService.HintSize="416,711" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Do recorrer citaciones" sap:VirtualizedContainerService.HintSize="541,869" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="Citacion" />
                           </Sequence.Variables>
@@ -382,7 +422,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute citacion" sap:VirtualizedContainerService.HintSize="354,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Version="V3">
+                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute citacion" sap:VirtualizedContainerService.HintSize="479,222" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Version="V3">
                             <uix:NGetAttributeGeneric.InUiElement>
                               <InArgument x:TypeArguments="ui:UiElement">
                                 <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">CurrentElement</CSharpValue>
@@ -394,7 +434,25 @@
                               </OutArgument>
                             </uix:NGetAttributeGeneric.Result>
                           </uix:NGetAttributeGeneric>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click no. infracción" sap:VirtualizedContainerService.HintSize="354,205" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V3">
+                          <ui:MultipleAssign DisplayName="Multiple Assign Añadir citaciones" sap:VirtualizedContainerService.HintSize="479,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">out_Citaciones</CSharpReference>
+                                    </OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">out_Citaciones+Environment.NewLine+Citacion</CSharpValue>
+                                    </InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                          </ui:MultipleAssign>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click no. infracción" sap:VirtualizedContainerService.HintSize="479,208" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V3">
                             <uix:NClick.InUiElement>
                               <InArgument x:TypeArguments="ui:UiElement">
                                 <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">CurrentElement</CSharpValue>
@@ -411,7 +469,7 @@
                               </uix:VerifyExecutionOptions>
                             </uix:NClick.VerifyOptions>
                           </uix:NClick>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DescargarDocumentos - Invoke Workflow File (Chrome\\DescargarDocumentos.xaml)" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Chrome\\DescargarDocumentos.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DescargarDocumentos - Invoke Workflow File (Chrome\\DescargarDocumentos.xaml)" sap:VirtualizedContainerService.HintSize="479,200" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Chrome\\DescargarDocumentos.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="in_PathCarpetaDescarga">
                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">in_PathCarpetaDescarga</CSharpValue>
@@ -426,7 +484,7 @@
                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">Citacion</CSharpValue>
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_PathCarpetaCliente">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">PathCarpetaCliente</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">out_PathCarpetaCliente</CSharpValue>
                               </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
@@ -450,18 +508,18 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear 'No. Infracción'" sap:VirtualizedContainerService.HintSize="450,322" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Target does not appear 'No. Infracción'" sap:VirtualizedContainerService.HintSize="450,324" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw DisplayName="Throw cliente sin citaciones" sap:VirtualizedContainerService.HintSize="388,122" sap2010:WorkflowViewState.IdRef="Throw_2">
+                  <Throw DisplayName="Throw cliente sin citaciones" sap:VirtualizedContainerService.HintSize="388,123" sap2010:WorkflowViewState.IdRef="Throw_2">
                     <InArgument x:TypeArguments="s:Exception">
                       <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">new UiPath.Core.BusinessRuleException("No tiene citaciones pendientes")</CSharpValue>
                     </InArgument>
                   </Throw>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,110" sap2010:WorkflowViewState.IdRef="MessageBox_2">
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,111" sap2010:WorkflowViewState.IdRef="MessageBox_2">
                     <ui:MessageBox.Text>
                       <InArgument x:TypeArguments="x:Object">
                         <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"NOO existen citaciones "</CSharpValue>
@@ -493,7 +551,7 @@
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message Termina ConsultaMultas" sap:VirtualizedContainerService.HintSize="1142,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message Termina ConsultaMultas" sap:VirtualizedContainerService.HintSize="1267,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"Termina ConsultaMultas..."</CSharpValue>

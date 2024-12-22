@@ -234,7 +234,7 @@
                       </uix:NSetText.Target>
                       <uix:NSetText.Text>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">in_PathCarpetaCliente+"\\"+in_citacion+".pdf"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">in_PathCarpetaCliente+"\\Boleta "+in_citacion+".pdf"</CSharpValue>
                         </InArgument>
                       </uix:NSetText.Text>
                     </uix:NSetText>
