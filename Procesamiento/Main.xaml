@@ -135,7 +135,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="625,1383" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="205,98" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
         <TryCatch DisplayName="Try Catch procesar trsx" sap:VirtualizedContainerService.HintSize="579,968" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
@@ -304,7 +304,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID2" DisplayName="Siguiente trsx" sap:VirtualizedContainerService.HintSize="174,83" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <Sequence DisplayName="Bajar transaccion de Orchestrator" sap:VirtualizedContainerService.HintSize="596,1219" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Bajar transaccion de Orchestrator" sap:VirtualizedContainerService.HintSize="694,1560" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="ShouldStop" />
                   </Sequence.Variables>
@@ -314,14 +314,14 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ShouldStop DisplayName="Should Stop para" sap:VirtualizedContainerService.HintSize="534,122" sap2010:WorkflowViewState.IdRef="ShouldStop_1">
+                  <ui:ShouldStop DisplayName="Should Stop para" sap:VirtualizedContainerService.HintSize="632,122" sap2010:WorkflowViewState.IdRef="ShouldStop_1">
                     <ui:ShouldStop.Result>
                       <OutArgument x:TypeArguments="x:Boolean">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ShouldStop</CSharpReference>
                       </OutArgument>
                     </ui:ShouldStop.Result>
                   </ui:ShouldStop>
-                  <If DisplayName="If validar para cola" sap:VirtualizedContainerService.HintSize="534,1009" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If DisplayName="If validar para cola" sap:VirtualizedContainerService.HintSize="632,1350" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">ShouldStop</CSharpValue>
@@ -356,13 +356,13 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="500,482" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="598,823" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="Try Catch siguiente trsx" sap:VirtualizedContainerService.HintSize="438,394" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Try Catch siguiente trsx" sap:VirtualizedContainerService.HintSize="536,735" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <TryCatch.Try>
                             <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item datos cola" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetQueueItem_1">
                               <ui:GetQueueItem.FolderPath>
@@ -383,10 +383,10 @@
                             </ui:GetQueueItem>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,550" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -518,9 +518,9 @@
       </State.Transitions>
     </State>
     <x:Reference>__ReferenceID2</x:Reference>
-    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="218,119" sap2010:WorkflowViewState.IdRef="State_5">
+    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="625,1594" sap2010:WorkflowViewState.IdRef="State_5">
       <State.Entry>
-        <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="474,336" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+        <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,1175" sap2010:WorkflowViewState.IdRef="TryCatch_5">
           <TryCatch.Try>
             <Sequence DisplayName="Iniciar" sap:VirtualizedContainerService.HintSize="541,925" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
@@ -541,7 +541,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="QueueFolderPath" CacheStrategy="None" DisplayName="Get Asset QueueFolderPath" FolderPath="BP-RPAUi-ValidacionDocumentosCrédito" sap:VirtualizedContainerService.HintSize="479,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+              <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="QueueFolderPath" CacheStrategy="None" DisplayName="Get Asset QueueFolderPath" FolderPath="BP-RPAUi-ConsultaMultasAMT-KenConstante" sap:VirtualizedContainerService.HintSize="479,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
                 <ui:GetRobotAsset.Value>
                   <OutArgument x:TypeArguments="x:String">
                     <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">QueueFolderPath</CSharpReference>
@@ -583,7 +583,7 @@
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,22" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="545,22" sap2010:WorkflowViewState.IdRef="Catch`1_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -628,10 +628,10 @@
                 </Sequence>
               </ActivityAction>
             </Catch>
-            <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="440,152" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+            <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="545,22" sap2010:WorkflowViewState.IdRef="Catch`1_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -639,7 +639,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                 </ActivityAction.Argument>
-                <Assign DisplayName="Assign BusinessError inicializar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign DisplayName="Assign BusinessError inicializar" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="ui:BusinessRuleException">
                       <CSharpReference x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">BusinessError</CSharpReference>
