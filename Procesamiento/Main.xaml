@@ -130,15 +130,52 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID2" DisplayName="Fin" sap:VirtualizedContainerService.HintSize="197,101" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
+    <State x:Name="__ReferenceID1" DisplayName="Fin" sap:VirtualizedContainerService.HintSize="197,101" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
       <State.Entry>
-        <ui:LogMessage DisplayName="Log Message fin" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
-          <ui:LogMessage.Message>
-            <InArgument x:TypeArguments="x:Object">
-              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"Finalizando proceso..."</CSharpValue>
-            </InArgument>
-          </ui:LogMessage.Message>
-        </ui:LogMessage>
+        <Sequence DisplayName="Sequence fin" sap:VirtualizedContainerService.HintSize="512,726" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message fin" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"Finalizando proceso..."</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+          <If DisplayName="If System error" sap:VirtualizedContainerService.HintSize="450,465" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_173">SystemError != null</CSharpValue>
+              </InArgument>
+            </If.Condition>
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw error final" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1">
+                  <InArgument x:TypeArguments="s:Exception">
+                    <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_174">new SystemException("Ejecucion con error")</CSharpValue>
+                  </InArgument>
+                </Throw>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
       </State.Entry>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -150,7 +187,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="205,98" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID0" DisplayName="Procesar trsx" sap:VirtualizedContainerService.HintSize="484,837" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
         <TryCatch DisplayName="Try Catch procesar trsx" sap:VirtualizedContainerService.HintSize="438,422" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
@@ -334,11 +371,9 @@
                 <InArgument x:TypeArguments="x:String" x:Key="in_QueueFolderPath">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">QueueFolderPath</CSharpValue>
                 </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Observacion" />
                 <InArgument x:TypeArguments="x:String" x:Key="in_Id">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">Id</CSharpValue>
                 </InArgument>
-                <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_HoraInicio" />
                 <InArgument x:TypeArguments="x:String" x:Key="in_fecha">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">fecha</CSharpValue>
                 </InArgument>
@@ -369,7 +404,7 @@
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">BusinessError != null</CSharpValue>
           </Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID1" DisplayName="Siguiente trsx" sap:VirtualizedContainerService.HintSize="174,83" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" DisplayName="Siguiente trsx" sap:VirtualizedContainerService.HintSize="174,83" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <Sequence DisplayName="Bajar transaccion de Orchestrator" sap:VirtualizedContainerService.HintSize="694,1560" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
@@ -545,7 +580,7 @@
                     <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">ActualTransaction == null</CSharpValue>
                   </Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" DisplayName="Informe" sap:VirtualizedContainerService.HintSize="484,761" sap2010:WorkflowViewState.IdRef="State_6">
+                    <State x:Name="__ReferenceID3" DisplayName="Informe" sap:VirtualizedContainerService.HintSize="167,99" sap2010:WorkflowViewState.IdRef="State_6">
                       <State.Entry>
                         <TryCatch DisplayName="Try Catch Informe" sap:VirtualizedContainerService.HintSize="438,422" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                           <TryCatch.Try>
@@ -626,6 +661,53 @@
                           <x:Double x:Key="StateContainerHeight">62.47999999999553</x:Double>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <State.Transitions>
+                        <Transition DisplayName="Fin" sap2010:WorkflowViewState.IdRef="Transition_16">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:PointCollection x:Key="ConnectorLocation">176.5,239.9 119.70000000000002,239.9 119.70000000000002,319.5</av:PointCollection>
+                              <x:Int32 x:Key="SrcConnectionPointIndex">45</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">46</x:Int32>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.To>
+                            <x:Reference>__ReferenceID1</x:Reference>
+                          </Transition.To>
+                          <Transition.Condition>
+                            <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_170">SystemError == null || BusinessError == null</CSharpValue>
+                          </Transition.Condition>
+                        </Transition>
+                        <Transition DisplayName="Businesss Error" sap2010:WorkflowViewState.IdRef="Transition_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:PointCollection x:Key="ConnectorLocation">234.95,279.5 234.95,375.05 198.5,375.05</av:PointCollection>
+                              <x:Int32 x:Key="SrcConnectionPointIndex">27</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">40</x:Int32>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.To>
+                            <x:Reference>__ReferenceID1</x:Reference>
+                          </Transition.To>
+                          <Transition.Condition>
+                            <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_171">BusinessError != null</CSharpValue>
+                          </Transition.Condition>
+                        </Transition>
+                        <Transition DisplayName="SystemError" sap2010:WorkflowViewState.IdRef="Transition_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:PointCollection x:Key="ConnectorLocation">301.75,279.5 301.75,400.3 198.5,400.3</av:PointCollection>
+                              <x:Int32 x:Key="SrcConnectionPointIndex">59</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">60</x:Int32>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.To>
+                            <x:Reference>__ReferenceID1</x:Reference>
+                          </Transition.To>
+                          <Transition.Condition>
+                            <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_172">SystemError != null</CSharpValue>
+                          </Transition.Condition>
+                        </Transition>
+                      </State.Transitions>
                     </State>
                   </Transition.To>
                 </Transition>
@@ -642,7 +724,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
           </Transition.To>
           <Transition.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">SystemError != null</CSharpValue>
@@ -657,7 +739,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
           </Transition.To>
           <Transition.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">SystemError == null || BusinessError == null</CSharpValue>
@@ -665,7 +747,7 @@
         </Transition>
       </State.Transitions>
     </State>
-    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
     <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="218,119" sap2010:WorkflowViewState.IdRef="State_5">
       <State.Entry>
         <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,2364" sap2010:WorkflowViewState.IdRef="TryCatch_5">
@@ -924,7 +1006,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <x:Reference>__ReferenceID2</x:Reference>
+            <x:Reference>__ReferenceID1</x:Reference>
           </Transition.To>
           <Transition.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">BusinessError != null || SystemError != null</CSharpValue>
@@ -939,7 +1021,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
           </Transition.To>
           <Transition.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">SystemError ==null &amp;&amp; BusinessError==null</CSharpValue>

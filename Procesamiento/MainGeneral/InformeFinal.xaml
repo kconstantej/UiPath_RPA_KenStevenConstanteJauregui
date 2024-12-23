@@ -5,7 +5,7 @@
     <x:Property Name="in_StorageName" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>774,5324</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>774,5812</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InformeFinal" sap:VirtualizedContainerService.HintSize="784,5259" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InformeFinal" sap:VirtualizedContainerService.HintSize="784,5747" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="OutRecord" />
       <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="RecordFecha" />
@@ -451,14 +451,14 @@
         </InArgument>
       </ui:ForEach.Values>
     </ui:ForEach>
-    <If DisplayName="If validacion existencia archivos nforme final" sap:VirtualizedContainerService.HintSize="722,1707" sap2010:WorkflowViewState.IdRef="If_3">
+    <If DisplayName="If validacion existencia archivos nforme final" sap:VirtualizedContainerService.HintSize="722,2195" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">RecordFecha.Any()</CSharpValue>
         </InArgument>
       </If.Condition>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="637,1434" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="637,1922" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="PathInforme" />
             <Variable x:TypeArguments="x:String" Name="NombreInforme" />
@@ -516,13 +516,13 @@
               </InArgument>
             </ui:InvokeCode.Arguments>
           </ui:InvokeCode>
-          <ui:ForEach x:TypeArguments="p:ConsultaMultasAntKC" CurrentIndex="{x:Null}" DisplayName="For Each currentConsultaMultasAntKC" sap:VirtualizedContainerService.HintSize="575,537" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+          <ui:ForEach x:TypeArguments="p:ConsultaMultasAntKC" CurrentIndex="{x:Null}" DisplayName="For Each currentConsultaMultasAntKC" sap:VirtualizedContainerService.HintSize="575,750" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="p:ConsultaMultasAntKC">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="p:ConsultaMultasAntKC" Name="currentConsultaMultasAntKC" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body currentConsultaMultasAntKC" sap:VirtualizedContainerService.HintSize="541,400" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Body currentConsultaMultasAntKC" sap:VirtualizedContainerService.HintSize="541,604" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -542,7 +542,7 @@
                       </scg:List>
                     </uasc:AppendItemToCollection.Items>
                   </uasc:AppendItemToCollection>
-                  <ui:MultipleAssign DisplayName="Multiple Assign cambio estado record" sap:VirtualizedContainerService.HintSize="479,139" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                  <ui:MultipleAssign DisplayName="Multiple Assign cambio estado record" sap:VirtualizedContainerService.HintSize="479,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -560,6 +560,16 @@
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CambioDeEstado - Invoke Workflow File (MainGeneral\\CambioDeEstado.xaml)" sap:VirtualizedContainerService.HintSize="479,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="MainGeneral\\CambioDeEstado.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ContadorSalida">
+                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">ContSalida</CSharpReference>
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" x:Key="io_CambioRecord">
+                        <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">CambioRecord</CSharpReference>
+                      </InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                 </Sequence>
               </ActivityAction>
             </ui:ForEach.Body>
@@ -569,6 +579,20 @@
               </InArgument>
             </ui:ForEach.Values>
           </ui:ForEach>
+          <uda:UpdateMultipleEntityRecords x:TypeArguments="p:ConsultaMultasAntKC" FailedRecords="{x:Null}" OutputRecords="{x:Null}" ContinueBatchOnFailure="True" ContinueOnError="False" DisplayName="Update Multiple Entity Records nombsgfs" EntityId="28f6824a-91bf-ef11-8474-6045bd086125" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="575,172" sap2010:WorkflowViewState.IdRef="UpdateMultipleEntityRecords`1_3" TimeoutInMs="30000">
+            <uda:UpdateMultipleEntityRecords.InputRecords>
+              <InArgument x:TypeArguments="scg:ICollection(p:ConsultaMultasAntKC)">
+                <CSharpValue x:TypeArguments="scg:ICollection(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">CambioRecord</CSharpValue>
+              </InArgument>
+            </uda:UpdateMultipleEntityRecords.InputRecords>
+          </uda:UpdateMultipleEntityRecords>
+          <ui:DeleteFileX DisplayName="Delete File informe final" sap:VirtualizedContainerService.HintSize="575,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_1">
+            <ui:DeleteFileX.Path>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">PathInforme</CSharpValue>
+              </InArgument>
+            </ui:DeleteFileX.Path>
+          </ui:DeleteFileX>
         </Sequence>
       </If.Then>
       <If.Else>
