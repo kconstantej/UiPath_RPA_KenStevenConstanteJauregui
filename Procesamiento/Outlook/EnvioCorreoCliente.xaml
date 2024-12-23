@@ -201,7 +201,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" ConnectionId="1556547f-04a6-45d3-a247-6b1fa2f1ca21" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="479,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" UseConnectionService="True" UseSharedMailbox="False">
+    <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" ConnectionId="1556547f-04a6-45d3-a247-6b1fa2f1ca21" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="479,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" UseConnectionService="True" UseSharedMailbox="False">
       <umam:SendMailConnections.Attachments>
         <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)">
           <CSharpValue x:TypeArguments="scg:IEnumerable(upr:IResource)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">TempList.AsEnumerable()</CSharpValue>
@@ -226,11 +226,6 @@
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">Body</CSharpValue>
         </InArgument>
       </umam:SendMailConnections.Body>
-      <umam:SendMailConnections.Cc>
-        <InArgument x:TypeArguments="scg:IEnumerable(x:String)">
-          <CSharpValue x:TypeArguments="scg:IEnumerable(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">new string[]{"""keconsta@pichincha.com"""}</CSharpValue>
-        </InArgument>
-      </umam:SendMailConnections.Cc>
       <umam:SendMailConnections.InputTypeBackup>
         <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
           <usau:BackupSlot.BackupValues>

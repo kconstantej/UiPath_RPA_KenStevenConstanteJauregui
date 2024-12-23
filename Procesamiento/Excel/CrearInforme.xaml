@@ -112,7 +112,11 @@
   <Sequence DisplayName="CrearInforme" sap:VirtualizedContainerService.HintSize="637,2322" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_final" />
-      <Variable x:TypeArguments="s:String[]" Name="Array" />
+      <Variable x:TypeArguments="s:String[]" Name="Array">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">new string[4]</CSharpValue>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
