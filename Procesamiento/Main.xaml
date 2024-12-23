@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main2" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="699,759" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main2" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="699,759" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="clr-namespace:Procesamiento;assembly=DataService.Procesamiento" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -35,6 +35,13 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.IO</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>Procesamiento</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -107,6 +114,9 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>C7ACB56B194_Consulta.JZkfK1NdbtH1fvByQ2YQolN4</AssemblyReference>
+      <AssemblyReference>DataService.Procesamiento</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Procesamiento consultamultas ANT&#xA;Proceso de ConsultasMultasAnt&#xA;Author: KEN CONSTANTE" DisplayName="State Machine main" sap:VirtualizedContainerService.HintSize="709,694" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -144,7 +154,7 @@
       <State.Entry>
         <TryCatch DisplayName="Try Catch procesar trsx" sap:VirtualizedContainerService.HintSize="438,422" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
-            <Sequence DisplayName="Sequence Procesar trsx" sap:VirtualizedContainerService.HintSize="541,718" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Sequence Procesar trsx" sap:VirtualizedContainerService.HintSize="541,807" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,19 +167,45 @@
                   </InArgument>
                 </ui:LogMessage.Message>
               </ui:LogMessage>
-              <Assign DisplayName="BusinessError procesar null" sap:VirtualizedContainerService.HintSize="479,114" sap2010:WorkflowViewState.IdRef="Assign_4">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="ui:BusinessRuleException">
-                    <CSharpReference x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">BusinessError</CSharpReference>
+              <uda:QueryEntityRecords x:TypeArguments="p:ConsultaMultasAntKC" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="28f6824a-91bf-ef11-8474-6045bd086125" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="479,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" QueriedEntityId="28f6824a-91bf-ef11-8474-6045bd086125" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+                <uda:QueryEntityRecords.FilterArguments>
+                  <uda:FilterArgument FilterActivityType="{x:Null}">
+                    <uda:FilterArgument.Filter>
+                      <uda:GroupFilter Index="0" Operator="AND">
+                        <uda:GroupFilter.Filters>
+                          <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                            <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="IDENTIFICACION" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="0" />
+                            <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="CORREO" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="1" />
+                            <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="ESTADO" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="2" />
+                            <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="FechaEjecucion" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="3" />
+                          </scg:List>
+                        </uda:GroupFilter.Filters>
+                        <uda:GroupFilter.Groups>
+                          <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                        </uda:GroupFilter.Groups>
+                      </uda:GroupFilter>
+                    </uda:FilterArgument.Filter>
+                  </uda:FilterArgument>
+                </uda:QueryEntityRecords.FilterArguments>
+                <uda:QueryEntityRecords.FilterValues>
+                  <scg:List x:TypeArguments="InArgument" Capacity="4">
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_158">ActualTransaction.SpecificContent["IDENTIFICACION"].ToString()</CSharpValue>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_159">ActualTransaction.SpecificContent["CORREO"].ToString()</CSharpValue>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String">Pendiente</InArgument>
+                    <InArgument x:TypeArguments="x:String">Pendiente</InArgument>
+                  </scg:List>
+                </uda:QueryEntityRecords.FilterValues>
+                <uda:QueryEntityRecords.OutputRecords>
+                  <OutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                    <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_70">QueryEntity</CSharpReference>
                   </OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="ui:BusinessRuleException">
-                    <CSharpValue x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">null</CSharpValue>
-                  </InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:MultipleAssign DisplayName="Multiple Assign BusinessError" sap:VirtualizedContainerService.HintSize="479,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                </uda:QueryEntityRecords.OutputRecords>
+              </uda:QueryEntityRecords>
+              <ui:MultipleAssign DisplayName="Multiple Assign BusinessError" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -181,6 +217,18 @@
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="ui:BusinessRuleException">
                           <CSharpValue x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">null</CSharpValue>
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_72">Id</CSharpReference>
+                        </OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_160">QueryEntity[0].Id.ToString()</CSharpValue>
                         </InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
@@ -287,8 +335,13 @@
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">QueueFolderPath</CSharpValue>
                 </InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_Observacion" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_Id" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_Id">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">Id</CSharpValue>
+                </InArgument>
                 <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_HoraInicio" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_fecha">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">fecha</CSharpValue>
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </TryCatch.Finally>
@@ -813,6 +866,8 @@
       <Variable x:TypeArguments="x:String" Name="fecha" />
       <Variable x:TypeArguments="x:String" Name="PathTemp" />
       <Variable x:TypeArguments="x:String" Name="PathCarpetaDescarga" />
+      <Variable x:TypeArguments="x:String" Name="Id" />
+      <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="QueryEntity" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

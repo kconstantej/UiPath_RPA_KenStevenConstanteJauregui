@@ -6,6 +6,7 @@
   "dependencies": {
     "UiPath.DataService.Activities": "[24.11.1]",
     "UiPath.Excel.Activities": "[2.23.4]",
+    "UiPath.IntegrationService.Activities": "[1.11.0]",
     "UiPath.Mail.Activities": "[1.23.1]",
     "UiPath.MicrosoftOffice365.Activities": "[2.8.22]",
     "UiPath.Persistence.Activities": "[1.5.14-preview]",
