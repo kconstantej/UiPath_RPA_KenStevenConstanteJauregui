@@ -1,0 +1,488 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InformeFinal" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="774,4173" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="clr-namespace:Procesamiento;assembly=DataService.Procesamiento" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>Procesamiento</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.DataService.Activities.Models</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>DataService.Procesamiento</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="InformeFinal" sap:VirtualizedContainerService.HintSize="784,4108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="OutRecord" />
+      <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="RecordFecha" />
+      <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="CambioRecord" />
+      <Variable x:TypeArguments="x:Int32" Name="ContSalida" />
+      <Variable x:TypeArguments="x:Boolean" Name="SalidaNoEnviados">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" Value="True" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="SalidaFecha">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" Value="True" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="PathArchivoTemp" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message InformeFinal" sap:VirtualizedContainerService.HintSize="722,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"---&gt;Inicia InformeFinal..."</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <ui:MultipleAssign DisplayName="Multiple Assign inizializar record" sap:VirtualizedContainerService.HintSize="722,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">OutRecord</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                <CSharpValue x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">new System.Collections.Generic.List&lt;ConsultaMultasAntKC&gt;()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">RecordFecha</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                <CSharpValue x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">new System.Collections.Generic.List&lt;ConsultaMultasAntKC&gt;()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">ContSalida</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While no enviados" sap:VirtualizedContainerService.HintSize="722,1346" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body no enviados" sap:VirtualizedContainerService.HintSize="592,1200" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="TempNoEnviado" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uda:QueryEntityRecords x:TypeArguments="p:ConsultaMultasAntKC" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="28f6824a-91bf-ef11-8474-6045bd086125" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="530,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" QueriedEntityId="28f6824a-91bf-ef11-8474-6045bd086125" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+            <uda:QueryEntityRecords.FilterArguments>
+              <uda:FilterArgument FilterActivityType="{x:Null}">
+                <uda:FilterArgument.Filter>
+                  <uda:GroupFilter Index="0" Operator="AND">
+                    <uda:GroupFilter.Filters>
+                      <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                        <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="Enviado" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="0" />
+                      </scg:List>
+                    </uda:GroupFilter.Filters>
+                    <uda:GroupFilter.Groups>
+                      <scg:List x:TypeArguments="uda:GroupFilter" Capacity="4">
+                        <uda:GroupFilter Index="0" Operator="OR">
+                          <uda:GroupFilter.Filters>
+                            <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                              <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="ESTADO" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="1" />
+                              <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="ESTADO" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="2" />
+                            </scg:List>
+                          </uda:GroupFilter.Filters>
+                          <uda:GroupFilter.Groups>
+                            <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                          </uda:GroupFilter.Groups>
+                        </uda:GroupFilter>
+                      </scg:List>
+                    </uda:GroupFilter.Groups>
+                  </uda:GroupFilter>
+                </uda:FilterArgument.Filter>
+              </uda:FilterArgument>
+            </uda:QueryEntityRecords.FilterArguments>
+            <uda:QueryEntityRecords.FilterValues>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <InArgument x:TypeArguments="x:String">false</InArgument>
+                <InArgument x:TypeArguments="x:String">ÉXITO</InArgument>
+                <InArgument x:TypeArguments="x:String">ERROR</InArgument>
+              </scg:List>
+            </uda:QueryEntityRecords.FilterValues>
+            <uda:QueryEntityRecords.OutputRecords>
+              <OutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">TempNoEnviado</CSharpReference>
+              </OutArgument>
+            </uda:QueryEntityRecords.OutputRecords>
+          </uda:QueryEntityRecords>
+          <If DisplayName="If no existe no enviados" sap:VirtualizedContainerService.HintSize="530,466" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">TempNoEnviado.Count == 0 || TempNoEnviado == null</CSharpValue>
+              </InArgument>
+            </If.Condition>
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign cambio salida no enviados salidanoenviados" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">
+                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">SalidaNoEnviados</CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+          <Assign DisplayName="Assign outredord" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">OutRecord</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                <CSharpValue x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">OutRecord.Concat(TempNoEnviado).ToList()</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="foreach (var entidad in io_record)&#xD;&#xA;{&#xD;&#xA;&#x9;entidad.Enviado = &quot;NoEnviado&quot;;&#xD;&#xA;}" DisplayName="Invoke Code cambio estado de enviado" sap:VirtualizedContainerService.HintSize="530,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" x:Key="io_record">
+                <CSharpValue x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">TempNoEnviado</CSharpValue>
+              </InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <uda:UpdateMultipleEntityRecords x:TypeArguments="p:ConsultaMultasAntKC" FailedRecords="{x:Null}" OutputRecords="{x:Null}" ContinueBatchOnFailure="True" ContinueOnError="False" DisplayName="Update Multiple Entity Records" EntityId="28f6824a-91bf-ef11-8474-6045bd086125" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="UpdateMultipleEntityRecords`1_1" TimeoutInMs="30000">
+            <uda:UpdateMultipleEntityRecords.InputRecords>
+              <InArgument x:TypeArguments="scg:ICollection(p:ConsultaMultasAntKC)">
+                <CSharpValue x:TypeArguments="scg:ICollection(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">TempNoEnviado</CSharpValue>
+              </InArgument>
+            </uda:UpdateMultipleEntityRecords.InputRecords>
+          </uda:UpdateMultipleEntityRecords>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+      <ui:InterruptibleDoWhile.Condition>
+        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">SalidaNoEnviados</CSharpValue>
+      </ui:InterruptibleDoWhile.Condition>
+    </ui:InterruptibleDoWhile>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentItem por fecha" sap:VirtualizedContainerService.HintSize="722,1571" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,1425" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While por fecha" sap:VirtualizedContainerService.HintSize="626,1337" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Body por fecha" sap:VirtualizedContainerService.HintSize="592,1200" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" Name="TempFecha" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uda:QueryEntityRecords x:TypeArguments="p:ConsultaMultasAntKC" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records filtrado" EntityId="28f6824a-91bf-ef11-8474-6045bd086125" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="530,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_2" QueriedEntityId="28f6824a-91bf-ef11-8474-6045bd086125" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+                    <uda:QueryEntityRecords.FilterArguments>
+                      <uda:FilterArgument FilterActivityType="{x:Null}">
+                        <uda:FilterArgument.Filter>
+                          <uda:GroupFilter Index="0" Operator="AND">
+                            <uda:GroupFilter.Filters>
+                              <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                                <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="Enviado" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="0" />
+                                <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="FechaEjecucion" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="1" />
+                              </scg:List>
+                            </uda:GroupFilter.Filters>
+                            <uda:GroupFilter.Groups>
+                              <scg:List x:TypeArguments="uda:GroupFilter" Capacity="4">
+                                <uda:GroupFilter Index="0" Operator="OR">
+                                  <uda:GroupFilter.Filters>
+                                    <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                                      <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="ESTADO" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="2" />
+                                      <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="ESTADO" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="3" />
+                                    </scg:List>
+                                  </uda:GroupFilter.Filters>
+                                  <uda:GroupFilter.Groups>
+                                    <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                                  </uda:GroupFilter.Groups>
+                                </uda:GroupFilter>
+                              </scg:List>
+                            </uda:GroupFilter.Groups>
+                          </uda:GroupFilter>
+                        </uda:FilterArgument.Filter>
+                      </uda:FilterArgument>
+                    </uda:QueryEntityRecords.FilterArguments>
+                    <uda:QueryEntityRecords.FilterValues>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <InArgument x:TypeArguments="x:String">NoEnviado</InArgument>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">currentItem.ToString()</CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String">ÉXITO</InArgument>
+                        <InArgument x:TypeArguments="x:String">ERROR</InArgument>
+                      </scg:List>
+                    </uda:QueryEntityRecords.FilterValues>
+                    <uda:QueryEntityRecords.OutputRecords>
+                      <OutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                        <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">TempFecha</CSharpReference>
+                      </OutArgument>
+                    </uda:QueryEntityRecords.OutputRecords>
+                  </uda:QueryEntityRecords>
+                  <If DisplayName="If existen diferentes fechas" sap:VirtualizedContainerService.HintSize="530,466" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">TempFecha.Count == 0 || TempFecha == null</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign cambio salida no enviados" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">SalidaFecha</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <Assign DisplayName="Assign record" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                        <CSharpReference x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">RecordFecha</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)">
+                        <CSharpValue x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">RecordFecha.Concat(TempFecha).ToList()</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="foreach (var entidad in io_record)&#xA;{&#xA;&#x9;entidad.Enviado = &quot;NoEnviado&quot;;&#xA;}" DisplayName="Invoke Code fecha" sap:VirtualizedContainerService.HintSize="530,197" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+                    <ui:InvokeCode.Arguments>
+                      <InArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" x:Key="io_record">
+                        <CSharpValue x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">TempFecha</CSharpValue>
+                      </InArgument>
+                    </ui:InvokeCode.Arguments>
+                  </ui:InvokeCode>
+                  <uda:UpdateMultipleEntityRecords x:TypeArguments="p:ConsultaMultasAntKC" FailedRecords="{x:Null}" OutputRecords="{x:Null}" ContinueBatchOnFailure="True" ContinueOnError="False" DisplayName="Update Multiple Entity Records cambio estado fecha enviado" EntityId="28f6824a-91bf-ef11-8474-6045bd086125" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="UpdateMultipleEntityRecords`1_2" TimeoutInMs="30000">
+                    <uda:UpdateMultipleEntityRecords.InputRecords>
+                      <InArgument x:TypeArguments="scg:ICollection(p:ConsultaMultasAntKC)">
+                        <CSharpValue x:TypeArguments="scg:ICollection(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">TempFecha</CSharpValue>
+                      </InArgument>
+                    </uda:UpdateMultipleEntityRecords.InputRecords>
+                  </uda:UpdateMultipleEntityRecords>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">SalidaFecha</CSharpValue>
+              </ui:InterruptibleDoWhile.Condition>
+            </ui:InterruptibleDoWhile>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <ui:ForEach.Values>
+        <InArgument x:TypeArguments="sc:IEnumerable">
+          <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">OutRecord.Select(r=&gt; r.FechaEjecucion).Distinct()</CSharpValue>
+        </InArgument>
+      </ui:ForEach.Values>
+    </ui:ForEach>
+    <If DisplayName="If validacion existencia archivos nforme final" sap:VirtualizedContainerService.HintSize="722,556" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">RecordFecha.Any()</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,283" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CrearInforme - Invoke Workflow File (Excel\\CrearInforme.xaml)" sap:VirtualizedContainerService.HintSize="354,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\\CrearInforme.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" x:Key="in_Record">
+                <CSharpValue x:TypeArguments="scg:IList(p:ConsultaMultasAntKC)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">RecordFecha</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="out_PathArchivoCreado">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">PathArchivoTemp</CSharpValue>
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message Termi InformeFinal" sap:VirtualizedContainerService.HintSize="722,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">"---&gt;Inicia InformeFinal..."</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>
