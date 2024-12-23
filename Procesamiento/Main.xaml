@@ -130,9 +130,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID1" DisplayName="Fin" sap:VirtualizedContainerService.HintSize="197,101" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
+    <State x:Name="__ReferenceID1" DisplayName="Fin" sap:VirtualizedContainerService.HintSize="558,1044" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
       <State.Entry>
-        <Sequence DisplayName="Sequence fin" sap:VirtualizedContainerService.HintSize="512,726" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Sequence fin" sap:VirtualizedContainerService.HintSize="512,930" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,6 +145,11 @@
               </InArgument>
             </ui:LogMessage.Message>
           </ui:LogMessage>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KillAllProcess - Invoke Workflow File (Framework\\KillAllProcess.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Framework\\KillAllProcess.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
           <If DisplayName="If System error" sap:VirtualizedContainerService.HintSize="450,465" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
@@ -748,7 +753,7 @@
       </State.Transitions>
     </State>
     <x:Reference>__ReferenceID2</x:Reference>
-    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="625,2987" sap2010:WorkflowViewState.IdRef="State_5">
+    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Inicializar" sap:VirtualizedContainerService.HintSize="218,119" sap2010:WorkflowViewState.IdRef="State_5">
       <State.Entry>
         <TryCatch DisplayName="Try Catch Inicializar" sap:VirtualizedContainerService.HintSize="579,2568" sap2010:WorkflowViewState.IdRef="TryCatch_5">
           <TryCatch.Try>
