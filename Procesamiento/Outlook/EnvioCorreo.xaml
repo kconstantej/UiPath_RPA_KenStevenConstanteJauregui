@@ -5,7 +5,7 @@
     <x:Property Name="in_body" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>679,1036</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>679,1136</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,7 +103,7 @@
       <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EnvioCorreo" sap:VirtualizedContainerService.HintSize="416,971" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="EnvioCorreo" sap:VirtualizedContainerService.HintSize="416,1071" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="HtmlText" />
     </Sequence.Variables>
@@ -126,7 +126,7 @@
         </OutArgument>
       </ui:ReadTextFile.Content>
     </ui:ReadTextFile>
-    <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" ConnectionId="c45f00fe-82b6-44ee-b6ff-7e47ecdbb8e1" DisplayName="Send Email notificacion" sap:VirtualizedContainerService.HintSize="354,434" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" UseConnectionService="True" UseSharedMailbox="False">
+    <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" ConnectionAccountName="{x:Null}" AttachmentInputMode="Existing" AttachmentPaths="{x:Null}" Attachments="{x:Null}" AuthScopesInvalid="False" Bcc="{x:Null}" Cc="{x:Null}" ConnectionId="1556547f-04a6-45d3-a247-6b1fa2f1ca21" ContinueOnError="{x:Null}" DisplayName="Send Email notificacion" sap:VirtualizedContainerService.HintSize="354,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" Mailbox="{x:Null}" ReplyTo="{x:Null}" SaveAsDraft="False" SingleAttachment="{x:Null}" TextBody="{x:Null}" UseConnectionService="True" UseSharedMailbox="False">
       <umam:SendMailConnections.AttachmentsBackup>
         <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
           <usau:BackupSlot.BackupValues>
@@ -136,7 +136,10 @@
       </umam:SendMailConnections.AttachmentsBackup>
       <umam:SendMailConnections.Body>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">HtmlText.Replace("in_body", in_body)</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>HtmlText.Replace("in_body", in_body)</CSharpValue>
         </InArgument>
       </umam:SendMailConnections.Body>
       <umam:SendMailConnections.InputTypeBackup>
@@ -155,12 +158,18 @@
       </umam:SendMailConnections.MailboxBackup>
       <umam:SendMailConnections.Subject>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">in_Sub</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>in_Sub</CSharpValue>
         </InArgument>
       </umam:SendMailConnections.Subject>
       <umam:SendMailConnections.To>
         <InArgument x:TypeArguments="scg:IEnumerable(x:String)">
-          <CSharpValue x:TypeArguments="scg:IEnumerable(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">new List&lt;string&gt; { in_CorreoNotificacion }</CSharpValue>
+          <CSharpValue x:TypeArguments="scg:IEnumerable(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="scg:IEnumerable(x:String)" />
+            </CSharpValue.Result>new List&lt;string&gt; { in_CorreoNotificacion }</CSharpValue>
         </InArgument>
       </umam:SendMailConnections.To>
     </umam:SendMailConnections>

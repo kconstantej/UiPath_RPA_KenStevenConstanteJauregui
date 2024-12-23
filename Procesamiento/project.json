@@ -7,6 +7,7 @@
     "UiPath.DataService.Activities": "[24.11.1]",
     "UiPath.Excel.Activities": "[2.23.4]",
     "UiPath.Mail.Activities": "[1.23.1]",
+    "UiPath.MicrosoftOffice365.Activities": "[2.8.22]",
     "UiPath.Persistence.Activities": "[1.5.14-preview]",
     "UiPath.System.Activities": "[24.10.3]",
     "UiPath.Testing.Activities": "[24.10.3]",
@@ -18,7 +19,7 @@
       "serviceDocument": ".entities/EntitiesStore.json",
       "tenantName": "BP_DEV",
       "namespace": "Procesamiento",
-      "uniqueReference": "Gex/Df+WE5GrIVbd0sBG2xghZS2uufw3OCdX6K1fkFM="
+      "uniqueReference": "Qbw7WlBRF6KRe1jlnv0y5B6PBGJ/WTUtCntwt+sSaOE="
     }
   ],
   "schemaVersion": "4.0",
